@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       {/* TopHeader */}
       <TopHeader />
-      <div className=" max-w-screen-xl mx-auto px-4 lg:px-0">
+      <div className="">
         {/* Middle Header */}
         <MiddleHeader />
         {/* BottomHeader */}
