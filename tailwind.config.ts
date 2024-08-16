@@ -16,6 +16,7 @@ const config: Config = {
         borderColor: "#eaebed",
         skyColor: "#0989ff",
         lightText: "#55585b",
+        lightOrange: "#ff6736",
       },
     },
   },
