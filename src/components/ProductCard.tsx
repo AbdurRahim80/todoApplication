@@ -13,10 +13,13 @@ interface Props {
 
 const ProductSideBar = ({ id }: { id: number }) => {
   return (
-    <div className="absolute bottom-12 right-2 border border-borderColor flex flex-col text-2xl rounded-md overflow-hidden transform translate-x-20 group-hover:translate-x-0 duration-300 bg-themeWhite">
-      <button className="p-2 hover:bg-skyColor hover:text-white duration-300">
-        <FiShoppingCart />
-      </button>
+    <div className="absolute bottom-12 right-2 border border-borderColor flex flex-col text-2xl rounded-md transform translate-x-20 group-hover:translate-x-0 duration-300 bg-themeWhite">
+      <div className="tooltip tooltip-left" data-tip="shopping">
+        <button className=" p-2 rounded-t-md hover:bg-skyColor hover:text-white duration-300">
+          <FiShoppingCart />
+        </button>
+      </div>
+
       <Link
         href={`/product/${id}`}
         // href={{
@@ -26,12 +29,16 @@ const ProductSideBar = ({ id }: { id: number }) => {
         //   },
         // }}
         className="p-2 hover:bg-skyColor hover:text-white duration-300 border-y border-y-borderColor"
-      >
-        <FiEye />
+      ><div className="tooltip tooltip-left" data-tip="Quick View">
+          <FiEye />
+        </div>
       </Link>
-      <button className="p-2 hover:bg-skyColor hover:text-white duration-300">
-        <MdFavoriteBorder />
-      </button>
+
+      <div className="tooltip tooltip-left" data-tip="Add To WishLish">
+        <button className="p-2 hover:bg-skyColor hover:text-white duration-300">
+          <MdFavoriteBorder />
+        </button>
+      </div>
     </div>
   );
 };
@@ -54,12 +61,14 @@ const ProductCard = ({ product }: Props) => {
         )}
         <ProductSideBar id={product?.id} />
       </div>
-      <div className="p-4 border-t border-t-borderColor flex flex-col gap-1">
-        <p className="text-sm font-medium capitalize text-lightText">
-          {product?.category}
-        </p>
-        <h2 className="font-semibold line-clamp-2">{product?.title}</h2>
-        <p className="font-semibold">${product?.price}</p>
+      <div className=" flex flex-col p-4 border-t border-t-borderColor gap-1">
+        <div className="h-[110px]">
+          <p className="text-sm font-medium capitalize text-lightText">
+            {product?.category}
+          </p>
+          <h2 className="font-semibold line-clamp-2">{product?.title}</h2>
+          <p className="font-semibold">${product?.price}</p>
+        </div>
         <AddToCartButton />
       </div>
     </div>
