@@ -66,7 +66,7 @@ const ProductCard = ({ product }: Props) => {
           <p className="text-sm font-medium capitalize text-lightText">
             {product?.category}
           </p>
-          <h2 className="font-semibold line-clamp-2">{product?.title}</h2>
+          <h3 className="font-semibold line-clamp-2">{product?.title}</h3>
           <p className="font-semibold">${product?.price}</p>
         </div>
         <AddToCartButton />
