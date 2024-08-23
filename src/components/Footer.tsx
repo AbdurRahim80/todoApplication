@@ -19,10 +19,10 @@ const Footer = () => {
           <Link href={"/"}>
             <Image src={logo} alt="logo" />
           </Link>
-          <p>
+          <h3>
             We are a team of designers and developers that create high quality
             WordPress
-          </p>
+          </h3>
           <SocialLink />
         </div>
         <div>
